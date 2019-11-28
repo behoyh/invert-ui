@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   marketingObject:MarketingMessage[];
 
   ngOnInit() {
-    this.service.GetAllMessages().subscribe(x=> {debugger; this.marketingObject = x;});
+    this.service.GetAllMessages().subscribe(x=> {this.marketingObject = x;});
   }
 
 }

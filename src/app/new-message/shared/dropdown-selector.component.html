@@ -1,0 +1,12 @@
+<div class="btn-group" dropdown>
+    <button id="button-animated" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+        aria-controls="dropdown-animated">
+        Button dropdown <span class="caret"></span>
+    </button>
+    <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">
+        <li [routerLink]="['/new/banner']" role="menuitem"><button class="dropdown-item" >Banner</button></li>
+        <li [routerLink]="['/new/popup']" role="menuitem"><button class="dropdown-item" href="#">Popup</button></li>
+        <li [routerLink]="['/new/marketing']" role="menuitem"><button class="dropdown-item" href="#">Marketing</button></li>
+        <li [routerLink]="['/new/login']" role="menuitem"><button class="dropdown-item" href="#">Login</button></li>
+    </ul>
+</div>
