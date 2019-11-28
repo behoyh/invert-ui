@@ -1,4 +1,6 @@
-# InvertUi
+# invert-ui
+
+front-end project to [invert-api](https://github.com/behoyh/invert-api)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
 
