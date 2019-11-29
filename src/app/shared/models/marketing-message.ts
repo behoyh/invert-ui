@@ -6,6 +6,7 @@ export class MarketingMessage{
     istargeted:boolean;
     title:string;
     body:string;
+    link:string;
     image:string;
     startdate:Date;
     enddate:Date;
