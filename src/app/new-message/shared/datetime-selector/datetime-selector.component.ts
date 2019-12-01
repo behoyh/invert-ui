@@ -6,8 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datetime-selector.component.scss']
 })
 export class DatetimeSelectorComponent implements OnInit {
-
-  constructor() { }
+  bsInlineValue = new Date();
+  bsInlineRangeValue: Date[];
+  maxDate = new Date();
+ 
+  constructor() {
+    this.maxDate.setDate(this.maxDate.getDate() + 7);
+    this.bsInlineRangeValue = [this.bsInlineValue, this.maxDate];
+  }
 
   ngOnInit() {
   }

@@ -16,16 +16,19 @@ import { TypeSelectorComponent } from './shared/type-selector/type-selector.comp
 import { UrgentToogleComponent } from './shared/urgent-toogle/urgent-toogle.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TargetUploaderComponent } from './shared/target-uploader/target-uploader.component';
 import { VersionSelectorComponent } from './shared/version-selector/version-selector.component';
+import { LinkComponent } from './shared/link/link.component';
 
 @NgModule({
-  declarations: [NewMessageComponent, BannerComponent, MarketingComponent, PopupComponent, LoginComponent, DropdownSelectorComponent, MessagePreviewerComponent, TitleComponent, BodyComponent, DatetimeSelectorComponent, ImageUploaderComponent, TypeSelectorComponent, UrgentToogleComponent, TargetUploaderComponent, VersionSelectorComponent],
+  declarations: [NewMessageComponent, BannerComponent, MarketingComponent, PopupComponent, LoginComponent, DropdownSelectorComponent, MessagePreviewerComponent, TitleComponent, BodyComponent, DatetimeSelectorComponent, ImageUploaderComponent, TypeSelectorComponent, UrgentToogleComponent, TargetUploaderComponent, VersionSelectorComponent, LinkComponent],
   imports: [
     CommonModule,
     NewRoutingModule,
     BrowserAnimationsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    BsDatepickerModule
   ],
   providers: [],
   bootstrap: [NewMessageComponent]
