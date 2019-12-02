@@ -3,7 +3,7 @@
 <ul>
     <li *ngFor="let item of marketingObject">
         <p>{{item.title}}</p>
-        <button>edit</button>
-        <button>delete</button>
+        <button class="btn btn-link" routerLink="/new/{{item.type}}/{{item.id}}">edit</button>
+        <button class="btn btn-link" (click)="DeleteMessage(item)">delete</button>
     </li>
 </ul>

@@ -1,6 +1,6 @@
 export class MarketingMessage{
     id:BigInteger;
-    type:number;
+    type:string;
     active: boolean;
     urgent: boolean;
     istargeted:boolean;
