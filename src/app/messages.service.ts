@@ -28,9 +28,7 @@ export class MessagesService {
   }
 
   public AddOrUpdateMessage(message: MarketingMessage) : Observable<number> {
-
     var request = new ApiRequest(message);
-
     return this.http.post<number>(environment.server + "/api/messages/update", request, this.httpOptions)
       .pipe(map(x => {
         return x;

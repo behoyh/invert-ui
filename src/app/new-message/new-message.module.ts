@@ -20,9 +20,10 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TargetUploaderComponent } from './shared/target-uploader/target-uploader.component';
 import { VersionSelectorComponent } from './shared/version-selector/version-selector.component';
 import { LinkComponent } from './shared/link/link.component';
+import { SubmitButtonComponent } from './shared/submit-button/submit-button.component';
 
 @NgModule({
-  declarations: [NewMessageComponent, BannerComponent, MarketingComponent, PopupComponent, LoginComponent, DropdownSelectorComponent, MessagePreviewerComponent, TitleComponent, BodyComponent, DatetimeSelectorComponent, ImageUploaderComponent, TypeSelectorComponent, UrgentToogleComponent, TargetUploaderComponent, VersionSelectorComponent, LinkComponent],
+  declarations: [NewMessageComponent, BannerComponent, MarketingComponent, PopupComponent, LoginComponent, DropdownSelectorComponent, MessagePreviewerComponent, TitleComponent, BodyComponent, DatetimeSelectorComponent, ImageUploaderComponent, TypeSelectorComponent, UrgentToogleComponent, TargetUploaderComponent, VersionSelectorComponent, LinkComponent, SubmitButtonComponent],
   imports: [
     CommonModule,
     NewRoutingModule,

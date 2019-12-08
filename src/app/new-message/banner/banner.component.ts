@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { MarketingMessage } from 'src/app/shared/models/marketing-message';
 
 @Component({
   selector: 'app-banner',
@@ -6,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit {
+  @Output() message: EventEmitter<MarketingMessage> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
     //const id = +this.route.snapshot.paramMap.get('id');
   }
+  
+
 
 }

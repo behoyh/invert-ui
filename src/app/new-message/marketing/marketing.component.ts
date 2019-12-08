@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { MarketingMessage } from 'src/app/shared/models/marketing-message';
 
 @Component({
   selector: 'app-marketing',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./marketing.component.scss']
 })
 export class MarketingComponent implements OnInit {
+  @Output() message: EventEmitter<MarketingMessage> = new EventEmitter();
 
   constructor() { }
 
