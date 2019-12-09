@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-version-selector',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./version-selector.component.scss']
 })
 export class VersionSelectorComponent implements OnInit {
+  @Output() netResult: EventEmitter<any> = new EventEmitter();
+
 
   constructor() { }
 

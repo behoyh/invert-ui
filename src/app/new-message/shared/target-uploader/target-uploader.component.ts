@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-target-uploader',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./target-uploader.component.scss']
 })
 export class TargetUploaderComponent implements OnInit {
+  @Output() netResult: EventEmitter<any> = new EventEmitter();
+
 
   constructor() { }
 

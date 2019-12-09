@@ -7,7 +7,6 @@ import { MarketingMessage } from 'src/app/shared/models/marketing-message';
   styleUrls: ['./banner.component.scss']
 })
 export class BannerComponent implements OnInit {
-  @Output() message: EventEmitter<MarketingMessage> = new EventEmitter();
 
   constructor() { }
 

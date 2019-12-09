@@ -7,8 +7,7 @@ import { MarketingMessage } from 'src/app/shared/models/marketing-message';
   styleUrls: ['./popup.component.scss']
 })
 export class PopupComponent implements OnInit {
-  @Output() message: EventEmitter<MarketingMessage> = new EventEmitter();
-
+  
   constructor() { }
 
   ngOnInit() {

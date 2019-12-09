@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-datetime-selector',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datetime-selector.component.scss']
 })
 export class DatetimeSelectorComponent implements OnInit {
+  @Output() netResult: EventEmitter<any> = new EventEmitter();
+
+
   bsInlineValue = new Date();
   bsInlineRangeValue: Date[];
   maxDate = new Date();
