@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Select } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { MessagesService } from 'src/app/messages.service';
 
 
 @Component({
@@ -8,10 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DropdownSelectorComponent implements OnInit {
 
-  constructor() { }
+  @Select(state => state.app.dropdownText) dropdownText$: Observable<string[]>;
 
-  ngOnInit() { }
+  constructor(private service: MessagesService) { }
 
-  
+  ngOnInit() {
 
+  }
+
+  updateState(type: string) {
+    this.service.Route(type);
+  }
 }

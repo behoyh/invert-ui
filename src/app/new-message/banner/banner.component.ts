@@ -10,9 +10,7 @@ export class BannerComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    //const id = +this.route.snapshot.paramMap.get('id');
-  }
+  ngOnInit() { }
   
 
 

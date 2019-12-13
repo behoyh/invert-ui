@@ -1,12 +1,12 @@
 <div class="btn-group" dropdown>
     <button id="button-animated" dropdownToggle type="button" class="btn btn-outline-primary dropdown-toggle"
         aria-controls="dropdown-animated">
-        {{"Select One"}} <span class="caret"></span>
+        {{dropdownText$ | async}} <span class="caret"></span>
     </button>
     <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">
-        <li [routerLink]="['/new/Banner']" role="menuitem"><button class="dropdown-item" >Banner</button></li>
-        <li [routerLink]="['/new/Popup']" role="menuitem"><button class="dropdown-item" href="#">Popup</button></li>
-        <li [routerLink]="['/new/Marketing']" role="menuitem"><button class="dropdown-item" href="#">Marketing</button></li>
-        <li [routerLink]="['/new/Login']" role="menuitem"><button class="dropdown-item" href="#">Login</button></li>
+        <li role="menuitem"><button (click)="updateState('Banner')" class="dropdown-item">Banner</button></li>
+        <li role="menuitem"><button (click)="updateState('Popup')" class="dropdown-item" href="#">Popup</button></li>
+        <li role="menuitem"><button (click)="updateState('Marketing')" class="dropdown-item" href="#">Marketing</button></li>
+        <li role="menuitem"><button (click)="updateState('Login')" class="dropdown-item" href="#">Login</button></li>
     </ul>
 </div>

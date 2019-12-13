@@ -15,7 +15,6 @@ import { State, StateContext, Action } from '@ngxs/store';
     }
 })
 export class AppState {
-
     @Action(SetState)
     setUser({setState}:StateContext<AppStateModel>, {payload}: SetState) {
         setState({

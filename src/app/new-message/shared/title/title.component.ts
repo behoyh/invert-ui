@@ -14,4 +14,9 @@ export class TitleComponent implements OnInit {
   ngOnInit() {
   }
 
+  emitTitle(title:string){
+    debugger;
+    this.netResult.emit(title);
+  }
+
 }

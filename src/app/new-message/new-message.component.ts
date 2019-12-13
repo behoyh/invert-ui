@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MarketingMessage } from '../shared/models/marketing-message';
 import { MessagesService } from '../messages.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-message',
@@ -8,26 +9,37 @@ import { MessagesService } from '../messages.service';
   styleUrls: ['./new-message.component.scss']
 })
 export class NewMessageComponent implements OnInit {
-
+  new = true;
   message: MarketingMessage;
 
-  constructor(private service: MessagesService) { }
+  constructor(private service: MessagesService, private route: ActivatedRoute, private router: Router) { }
 
-  ngOnInit() { }
+  ngOnInit(): void {
+    const firstRoute = this.route.snapshot.firstChild.url[0].path;
+    if (firstRoute == "new") {
+      this.new = false;
+    }
+    else {
+      this.service.Route(firstRoute);
+      this.service.GetMessage(this.route.snapshot.paramMap.get('id')).subscribe(x => this.message = x);
+    }
+  }
 
   updateMessage() {
-    debugger;
     this.service.AddOrUpdateMessage(this.message);
   }
 
   onActivate(componentReference) {
     componentReference.netResult.subscribe((data) => {
-       this.patchMessage(data);
+      this.patchMessage(data);
     })
- }
+  }
 
-  patchMessage(patch: any)
-  {
+  onDeactivate(componentReference) {
+    componentReference.netResult.unsubscribe();
+  }
+
+  patchMessage(patch: any) {
     this.message = {
       ...this.message,
       ...patch
