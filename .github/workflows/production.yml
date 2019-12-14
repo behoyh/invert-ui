@@ -12,10 +12,8 @@ jobs:
     - uses: mayur-rawte/github-angular-actions@latest
     - name: npm build
       run: npm build
-    - name: Code Climate Coverage Action
-      uses: paambaati/codeclimate-action@v2.3.0
-      with:
-        coverageCommand: ng test --code-coverage
+    - name: test coverage
+      run: ng test --code-coverage
     - name: ng test
       run: ng test
     - name: ng e2e
