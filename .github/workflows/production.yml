@@ -9,10 +9,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: mayur-rawte/github-angular-actions@latest
+    - uses: actions/setup-node@v1.1.0
+    - name: install angular-cli
+      run: npm install -g @angular/cli  
     - name: npm build
       run: npm build
-    - uses: mayur-rawte/github-angular-actions@latest
     - name: test coverage
       run: ng test --code-coverage
     - name: ng test
