@@ -9,7 +9,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: mayur-rawte/github-angular-actions@latest 
+    - uses: mayur-rawte/github-angular-actions@latest
+    - name: npm build
+      run: npm build
     - name: Code Climate Coverage Action
       uses: paambaati/codeclimate-action@v2.3.0
       with:
