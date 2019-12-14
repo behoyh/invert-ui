@@ -1,0 +1,19 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: ng test
+      run: ng test
+    - name: ng e2e
+      run: ng e2e
+    - name: Code Climate Coverage Action
+      uses: paambaati/codeclimate-action@v2.3.0
+      with:
+        coverageCommand: ng test --code-coverage
