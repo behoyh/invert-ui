@@ -18,13 +18,17 @@ export class NewMessageComponent implements OnInit {
   constructor(private service: MessagesService, private route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    if (!this.route.snapshot.firstChild) return;
     const firstRoute = this.route.snapshot.firstChild.url[0].path;
     if (firstRoute == "new") {
       this.new = false;
     }
     else {
       this.service.Route(firstRoute);
-      this.service.GetMessage(this.route.snapshot.paramMap.get('id')).subscribe(x => this.message = x);
+      var id = this.route.snapshot.firstChild.url[1].path;
+      if (id) {
+        this.service.GetMessage(id).subscribe(x => {debugger; this.message = x;});
+      }
     }
   }
 
@@ -37,5 +41,6 @@ export class NewMessageComponent implements OnInit {
       ...this.message,
       ...patch
     };
+    debugger;
   }
 }
