@@ -1,3 +1,4 @@
+<a href="https://codeclimate.com/github/behoyh/invert-ui/maintainability"><img src="https://api.codeclimate.com/v1/badges/03828160572f7b871949/maintainability" /></a>
 # invert-ui
 
 front-end project to [invert-api](https://github.com/behoyh/invert-api)
