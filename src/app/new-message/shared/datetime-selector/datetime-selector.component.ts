@@ -1,11 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-datetime-selector',
   templateUrl: './datetime-selector.component.html',
   styleUrls: ['./datetime-selector.component.scss']
 })
-export class DatetimeSelectorComponent implements OnInit {
+export class DatetimeSelectorComponent {
 
   bsInlineValue = new Date();
   bsInlineRangeValue: Date[];
@@ -15,8 +15,4 @@ export class DatetimeSelectorComponent implements OnInit {
     this.maxDate.setDate(this.maxDate.getDate() + 7);
     this.bsInlineRangeValue = [this.bsInlineValue, this.maxDate];
   }
-
-  ngOnInit() {
-  }
-
 }

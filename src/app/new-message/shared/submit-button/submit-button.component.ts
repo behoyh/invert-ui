@@ -1,20 +1,14 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-submit-button',
   templateUrl: './submit-button.component.html',
-  styleUrls: ['./submit-button.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./submit-button.component.scss']
 })
-export class SubmitButtonComponent implements OnInit {
+export class SubmitButtonComponent {
   @Output() submit = new EventEmitter();
   
   addOrUpdate = "Add";
-
-  constructor() { }
-
-  ngOnInit() {
-  }
 
   submitClicked()
   {

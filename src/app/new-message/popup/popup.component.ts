@@ -6,11 +6,4 @@ import { MarketingMessage } from 'src/app/shared/models/marketing-message';
   templateUrl: './popup.component.html',
   styleUrls: ['./popup.component.scss']
 })
-export class PopupComponent implements OnInit {
-  
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-}
+export class PopupComponent {}
