@@ -12,6 +12,7 @@ jobs:
     - uses: mayur-rawte/github-angular-actions@latest
     - name: npm build
       run: npm build
+    - uses: mayur-rawte/github-angular-actions@latest
     - name: test coverage
       run: ng test --code-coverage
     - name: ng test
