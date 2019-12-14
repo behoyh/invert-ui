@@ -1,4 +1,6 @@
 <div class="row">
     <label for="exampleInputEmail1">Body</label>
-    <textarea (change)="changed()" class="form-control" rows="5"></textarea>
+    <ng-template contextDisposer="message patchMessage" let-context>
+            <textarea [ngModel]="context.message" (ngModelChange)="context.patchMessage({'body':$event})" class="form-control" type="text" ></textarea>
+    </ng-template>
 </div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MarketingMessage } from '../shared/models/marketing-message';
 import { MessagesService } from '../messages.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-new-message',
@@ -10,9 +11,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NewMessageComponent implements OnInit {
   new = true;
-  message: MarketingMessage;
+  message: MarketingMessage = new MarketingMessage();
 
-  constructor(private service: MessagesService, private route: ActivatedRoute, private router: Router) { }
+  form: FormGroup = this.fb.group(this.message);
+
+  constructor(private service: MessagesService, private route: ActivatedRoute, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     const firstRoute = this.route.snapshot.firstChild.url[0].path;
@@ -27,16 +30,6 @@ export class NewMessageComponent implements OnInit {
 
   updateMessage() {
     this.service.AddOrUpdateMessage(this.message);
-  }
-
-  onActivate(componentReference) {
-    componentReference.netResult.subscribe((data) => {
-      this.patchMessage(data);
-    })
-  }
-
-  onDeactivate(componentReference) {
-    componentReference.netResult.unsubscribe();
   }
 
   patchMessage(patch: any) {

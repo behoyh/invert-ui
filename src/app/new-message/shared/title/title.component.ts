@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-title',
@@ -6,17 +6,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./title.component.scss']
 })
 export class TitleComponent implements OnInit {
-  @Output() netResult: EventEmitter<any> = new EventEmitter();
 
-
+  context:any;
   constructor() { }
 
   ngOnInit() {
-  }
-
-  emitTitle(title:string){
+    this.context.message
     debugger;
-    this.netResult.emit(title);
   }
-
 }

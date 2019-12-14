@@ -21,6 +21,8 @@ import { TargetUploaderComponent } from './shared/target-uploader/target-uploade
 import { VersionSelectorComponent } from './shared/version-selector/version-selector.component';
 import { LinkComponent } from './shared/link/link.component';
 import { SubmitButtonComponent } from './shared/submit-button/submit-button.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxContextModule } from 'ngx-context';
 
 @NgModule({
   declarations: [NewMessageComponent, BannerComponent, MarketingComponent, PopupComponent, LoginComponent, DropdownSelectorComponent, MessagePreviewerComponent, TitleComponent, BodyComponent, DatetimeSelectorComponent, ImageUploaderComponent, TypeSelectorComponent, UrgentToogleComponent, TargetUploaderComponent, VersionSelectorComponent, LinkComponent, SubmitButtonComponent],
@@ -29,7 +31,10 @@ import { SubmitButtonComponent } from './shared/submit-button/submit-button.comp
     NewRoutingModule,
     BrowserAnimationsModule,
     BsDropdownModule.forRoot(),
-    BsDatepickerModule
+    BsDatepickerModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxContextModule
   ],
   providers: [],
   bootstrap: [NewMessageComponent]
