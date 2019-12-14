@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VersionSelectorComponent } from './version-selector.component';
+import { VersionSelectorComponent } from '../src/app/new-message/shared/version-selector/version-selector.component';
 
 describe('VersionSelectorComponent', () => {
   let component: VersionSelectorComponent;

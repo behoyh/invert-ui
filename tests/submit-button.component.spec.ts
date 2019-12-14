@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DropdownSelectorComponent } from './dropdown-selector.component';
+import { SubmitButtonComponent } from '../src/app/new-message/shared/submit-button/submit-button.component';
 
-describe('DropdownSelectorComponent', () => {
-  let component: DropdownSelectorComponent;
-  let fixture: ComponentFixture<DropdownSelectorComponent>;
+describe('SumbitButtonComponent', () => {
+  let component: SubmitButtonComponent;
+  let fixture: ComponentFixture<SubmitButtonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DropdownSelectorComponent ]
+      declarations: [ SubmitButtonComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DropdownSelectorComponent);
+    fixture = TestBed.createComponent(SubmitButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

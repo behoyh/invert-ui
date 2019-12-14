@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MessagePreviewerComponent } from './message-previewer.component';
+import { MessagePreviewerComponent } from '../src/app/new-message/shared/message-previewer.component';
 
 describe('MessagePreviewerComponent', () => {
   let component: MessagePreviewerComponent;

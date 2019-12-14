@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BannerComponent } from './banner.component';
+import { TypeSelectorComponent } from '../src/app/new-message/shared/type-selector/type-selector.component';
 
-describe('BannerComponent', () => {
-  let component: BannerComponent;
-  let fixture: ComponentFixture<BannerComponent>;
+describe('TypeSelectorComponent', () => {
+  let component: TypeSelectorComponent;
+  let fixture: ComponentFixture<TypeSelectorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BannerComponent ]
+      declarations: [ TypeSelectorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BannerComponent);
+    fixture = TestBed.createComponent(TypeSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PopupComponent } from './popup.component';
+import { UrgentToogleComponent } from '../src/app/new-message/shared/urgent-toogle/urgent-toogle.component';
 
-describe('PopupComponent', () => {
-  let component: PopupComponent;
-  let fixture: ComponentFixture<PopupComponent>;
+describe('UrgentToogleComponent', () => {
+  let component: UrgentToogleComponent;
+  let fixture: ComponentFixture<UrgentToogleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PopupComponent ]
+      declarations: [ UrgentToogleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PopupComponent);
+    fixture = TestBed.createComponent(UrgentToogleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

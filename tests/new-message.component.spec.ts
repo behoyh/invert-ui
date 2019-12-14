@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TargetUploaderComponent } from './target-uploader.component';
+import { NewMessageComponent } from '../src/app/new-message/new-message.component';
 
-describe('TargetUploaderComponent', () => {
-  let component: TargetUploaderComponent;
-  let fixture: ComponentFixture<TargetUploaderComponent>;
+describe('NewMessageComponent', () => {
+  let component: NewMessageComponent;
+  let fixture: ComponentFixture<NewMessageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TargetUploaderComponent ]
+      declarations: [ NewMessageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TargetUploaderComponent);
+    fixture = TestBed.createComponent(NewMessageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
