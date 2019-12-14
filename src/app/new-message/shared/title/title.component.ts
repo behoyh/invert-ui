@@ -7,11 +7,9 @@ import { Component, OnInit} from '@angular/core';
 })
 export class TitleComponent implements OnInit {
 
-  context:any;
   constructor() { }
 
   ngOnInit() {
-    this.context.message
-    debugger;
+
   }
 }

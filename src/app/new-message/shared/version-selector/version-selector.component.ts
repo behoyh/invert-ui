@@ -6,12 +6,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./version-selector.component.scss']
 })
 export class VersionSelectorComponent implements OnInit {
-  @Output() netResult: EventEmitter<any> = new EventEmitter();
-
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

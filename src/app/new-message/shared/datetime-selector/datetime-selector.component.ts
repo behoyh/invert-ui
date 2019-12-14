@@ -6,8 +6,6 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./datetime-selector.component.scss']
 })
 export class DatetimeSelectorComponent implements OnInit {
-  @Output() netResult: EventEmitter<any> = new EventEmitter();
-
 
   bsInlineValue = new Date();
   bsInlineRangeValue: Date[];

@@ -6,12 +6,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./type-selector.component.scss']
 })
 export class TypeSelectorComponent implements OnInit {
-  @Output() netResult: EventEmitter<any> = new EventEmitter();
-
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
