@@ -16,6 +16,6 @@ export class DropdownSelectorComponent {
   constructor(private service: MessagesService) { }
 
   updateState(type: string) {
-    this.service.Route(type);
+    this.service.Route(type, "");
   }
 }

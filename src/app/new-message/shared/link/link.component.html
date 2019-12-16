@@ -1,6 +1,6 @@
 <div class="row">
     <label for="link d-block">Link</label>
-    <ng-template contextDisposer="message patchMessage" let-context>
-            <input [ngModel]="context.message" (ngModelChange)="context.patchMessage({'link':$event})" class="form-control" type="text" />
-        </ng-template>
+    <ng-template contextDisposer="link" let-control="link">
+        <input *ngIf="control" [formControl]="control" class="form-control" type="text" />
+    </ng-template>
 </div>

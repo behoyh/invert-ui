@@ -1,6 +1,6 @@
 <div class="row">
-    <label for="exampleInputEmail1">Body</label>
-    <ng-template contextDisposer="message patchMessage" let-context>
-            <textarea [ngModel]="context.message" (ngModelChange)="context.patchMessage({'body':$event})" class="form-control" type="text" ></textarea>
+    <label for="body">Body</label>
+    <ng-template contextDisposer="body" let-control="body">
+        <textarea class="form-control" *ngIf="control" [formControl]="control"></textarea>
     </ng-template>
 </div>

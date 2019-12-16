@@ -1,4 +1,9 @@
 export class MarketingMessage {
+
+    public constructor(init?: Partial<MarketingMessage>) {
+        Object.assign(this, init);
+    }
+
     id: BigInteger = new Uint8Array();
     type: string = "";
     active: boolean = false;

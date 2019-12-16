@@ -47,7 +47,7 @@ export class MessagesService {
       }));
   }
 
-  public Route(type:string){
+  public Route(type:string, id:string){
     var app = this.store.snapshot().app;
 
     this.store.dispatch([new SetState({
@@ -56,6 +56,6 @@ export class MessagesService {
       dropdownText: type,
       imagePreviewUri: type + ".png"
     }),
-    new Navigate(["new", type])]);
+    new Navigate(["new", type, id])]);
   }
 }
