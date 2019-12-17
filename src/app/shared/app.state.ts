@@ -9,7 +9,7 @@ import { State, StateContext, Action } from '@ngxs/store';
         token: '',
         tokenExpires: null,
         isLoading: false,
-        type: -1,
+        type: '',
         dropdownText: 'Select One',
         imagePreviewUri: ''
     }

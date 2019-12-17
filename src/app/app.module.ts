@@ -16,6 +16,7 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
+import { MomentModule } from 'ngx-moment';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
     ],{ developmentMode: !environment.production }),
     NgxsRouterPluginModule.forRoot(),
     NgxsReduxDevtoolsPluginModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MomentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

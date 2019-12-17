@@ -1,3 +1,5 @@
+import * as moment from 'moment';
+
 export class MarketingMessage {
 
     public constructor(init?: Partial<MarketingMessage>) {
@@ -13,8 +15,8 @@ export class MarketingMessage {
     body: string = "";
     link: string = null
     image: string = null;
-    startdate: Date = new Date();
-    enddate: Date = new Date();
-    created: Date = new Date();
-    modified: Date = new Date();
+    startdate: moment.Moment = moment();
+    enddate: moment.Moment = moment();
+    created: moment.Moment = moment();
+    modified: moment.Moment = moment();
 }

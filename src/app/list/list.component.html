@@ -1,9 +1,107 @@
-<div *ngIf="!marketingObject || marketingObject.length==0">No Messages.</div>
+<div
+    *ngIf="(!currentMessages || !currentMessages.length) && (!upcomingMessages ||!upcomingMessages.length) && (!pastMessages||!pastMessages.length)">
+    No Messages.
+</div>
 
-<ul>
-    <li *ngFor="let item of marketingObject">
+<div class="row alert alert-success">Active</div>
+<div class="row border">
+    <div class="col-sm-1">
+        ID
+    </div>
+    <div class="col-sm-1">
+        Title
+    </div>
+    <div class="col-sm-4">
+        Sunrise
+    </div>
+    <div class="col-sm-4">
+        Sunset
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+<div class="row" *ngFor="let item of currentMessages">
+    <div class="col-sm-1">
+        {{item.id}}
+    </div>
+    <div class="col-sm-1">
         <p>{{item.title}}</p>
-        <button class="btn btn-link" routerLink="/new/{{item.type}}/{{item.id}}">edit</button>
+    </div>
+    <div class="col-sm-4">
+        {{item.startdate| amDateFormat:'MMMM Do YYYY, h:mm a'}}
+    </div>
+    <div class="col-sm-4">
+        {{item.enddate| amDateFormat:'MMMM Do YYYY, h:mm a'}}
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-link text-danger" routerLink="/new/{{item.type}}/{{item.id}}">edit</button>
         <button class="btn btn-link" (click)="DeleteMessage(item)">delete</button>
-    </li>
-</ul>
+    </div>
+</div>
+<div class="row alert alert-warning">Upcoming</div>
+<div class="row border">
+    <div class="col-sm-1">
+        ID
+    </div>
+    <div class="col-sm-1">
+        Title
+    </div>
+    <div class="col-sm-4">
+        Sunrise
+    </div>
+    <div class="col-sm-4">
+        Sunset
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+<div class="row" *ngFor="let item of upcomingMessages">
+    <div class="col-sm-1">
+        {{item.id}}
+    </div>
+    <div class="col-sm-1">
+        <p>{{item.title}}</p>
+    </div>
+    <div class="col-sm-4">
+        {{item.startdate | amDateFormat:'MMMM Do YYYY, h:mm a'}}
+    </div>
+    <div class="col-sm-4">
+        {{item.enddate | amDateFormat:'MMMM Do YYYY, h:mm a'}}
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-link text-danger" routerLink="/new/{{item.type}}/{{item.id}}">edit</button>
+        <button class="btn btn-link" (click)="DeleteMessage(item)">delete</button>
+    </div>
+</div>
+<div class="row alert alert-danger">Past</div>
+<div class="row border">
+    <div class="col-sm-1">
+        ID
+    </div>
+    <div class="col-sm-1">
+        Title
+    </div>
+    <div class="col-sm-4">
+        Sunrise
+    </div>
+    <div class="col-sm-4">
+        Sunset
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+<div class="row" *ngFor="let item of pastMessages">
+    <div class="col-sm-1">
+        {{item.id}}
+    </div>
+    <div class="col-sm-1">
+        <p>{{item.title}}</p>
+    </div>
+    <div class="col-sm-4">
+        {{item.startdate | amDateFormat:'MMMM Do YYYY, h:mm a'}}
+    </div>
+    <div class="col-sm-4">
+        {{item.enddate | amDateFormat:'MMMM Do YYYY, h:mm a'}}
+    </div>
+    <div class="col-sm-2">
+        <button class="btn btn-link text-danger" routerLink="/new/{{item.type}}/{{item.id}}">edit</button>
+        <button class="btn btn-link" (click)="DeleteMessage(item)">delete</button>
+    </div>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MessagesService } from '../messages.service';
 import { MarketingMessage } from '../shared/models/marketing-message';
-import { Router, ActivatedRoute } from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-list',
@@ -10,12 +10,18 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ListComponent implements OnInit {
 
-  constructor(private service: MessagesService, private router: Router) { }
+  constructor(private service: MessagesService) { }
 
-  marketingObject: MarketingMessage[];
+  currentMessages: MarketingMessage[];
+  upcomingMessages: MarketingMessage[];
+  pastMessages: MarketingMessage[];
 
   ngOnInit() {
-    this.service.GetAllMessages().subscribe(x => { this.marketingObject = x; });
+    this.service.GetAllMessages().subscribe(x => { 
+      this.currentMessages = x.filter(y=>moment(y.startdate) >= moment() && moment(y.startdate) < moment());
+      this.upcomingMessages = x.filter(y=>moment(y.startdate) > moment()); 
+      this.pastMessages = x.filter(y=>moment(y.enddate) < moment()); 
+    });
   }
 
   public DeleteMessage(message:MarketingMessage) {

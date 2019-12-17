@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
-import { environment } from '../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 import { MarketingMessage } from './shared/models/marketing-message';
 import { ApiRequest } from './shared/models/request';
-import { MarketingComponent } from './new-message/marketing/marketing.component';
 import { SetState } from './shared/app.actions';
 import { Store } from '@ngxs/store';
-import { Router } from '@angular/router';
 import { Navigate } from '@ngxs/router-plugin';
 
 @Injectable({
@@ -22,7 +20,7 @@ export class MessagesService {
     })
   };
 
-  constructor(private http: HttpClient,private store: Store,private router: Router) { }
+  constructor(private http: HttpClient,private store: Store) { }
 
   public GetAllMessages(): Observable<MarketingMessage[]> {
     return this.http.get<MarketingMessage[]>(environment.server + "/api/messages/all")

@@ -5,17 +5,18 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
+import { DatetimeConverter } from '../shared/helpers/datetime-converter';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-new-message',
   templateUrl: './new-message.component.html',
-  styleUrls: ['./new-message.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./new-message.component.scss']
 })
 export class NewMessageComponent implements OnInit {
   @Select(state => state.app.type) type$: Observable<string>;
 
-  showSubmit:boolean;
+  showSubmit: boolean;
 
   form: FormGroup;
 
@@ -38,10 +39,10 @@ export class NewMessageComponent implements OnInit {
     return this.form.controls.image;
   }
   get startdate(): AbstractControl {
-    return this.form.controls.image;
+    return this.form.controls.startdate.value;
   }
   get enddate(): AbstractControl {
-    return this.form.controls.image;
+    return this.form.controls.enddate;
   }
 
   constructor(private service: MessagesService, private route: ActivatedRoute, private fb: FormBuilder) {
@@ -55,14 +56,21 @@ export class NewMessageComponent implements OnInit {
       body: [''],
       link: [''],
       image: [''],
-      startdate: [new Date(), Validators.required],
-      enddate: [new Date(), Validators.required],
-      created: [new Date(), Validators.required],
-      modified: [new Date(), Validators.required]
+      startdate: [moment(), Validators.required],
+      enddate: [moment(), Validators.required],
+      created: [moment(), Validators.required],
+      modified: [moment(), Validators.required]
     });
   }
 
   ngOnInit(): void {
+
+    this.type$.subscribe(x => {
+      if (x) {
+        this.showSubmit = true;
+      }
+      this.form.patchValue({ 'type': x });
+    });
 
     const firstRoute = this.route.snapshot.firstChild;
 
@@ -73,16 +81,21 @@ export class NewMessageComponent implements OnInit {
     if (id && id.path) {
       this.service.GetMessage(id.path).subscribe(x => { this.form.setValue(x); });
     }
-    
-    this.service.Route(firstRoute.url[0].path, id ? id.path : "");
 
-    this.type$.subscribe(x => {
-      if(x) this.showSubmit = true;
-      this.form.patchValue({ 'type': x });
-    });
+    this.service.Route(firstRoute.url[0].path, id ? id.path : "");
   }
 
   updateMessage() {
-    this.service.AddOrUpdateMessage(new MarketingMessage(this.form.value));
+    if (this.form.invalid) {
+      // Replace with inline messages.
+      alert("form is invalid.");
+      return;
+    }
+    this.service.AddOrUpdateMessage(new MarketingMessage(this.form.value)).subscribe(x => {
+      this.form.patchValue({ 'id': x });
+      // Replace with snackbar.
+      alert("Message saved.");
+      this.service.Route(null, null);
+    });
   }
 }
