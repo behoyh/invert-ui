@@ -95,7 +95,6 @@ export class NewMessageComponent implements OnInit {
       this.form.patchValue({ 'id': x });
       // Replace with snackbar.
       alert("Message saved.");
-      this.service.Route(null, null);
     });
   }
 }
