@@ -1,7 +1,10 @@
 <a href="https://codeclimate.com/github/behoyh/invert-ui/maintainability"><img src="https://api.codeclimate.com/v1/badges/03828160572f7b871949/maintainability" /></a>
+
+![invert-ui](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lvv5ZdlY65NsFAqv-z0%2F-LwKi8e0TsqbOXBpLfSW%2F-LwKjfatlnXrp2yFIT86%2Fimage.png?alt=media&token=6a33f50f-08ba-496a-a085-e0f823132cc0)
+
 # invert-ui
 
-front-end project to [invert-api](https://github.com/behoyh/invert-api)
+front-end project to [invert-api](https://github.com/behoyh/invert-api). Docs [here](https://docs.invert.dev/using-the-user-interface).
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
 
