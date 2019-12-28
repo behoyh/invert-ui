@@ -37,6 +37,14 @@
             "scripts": []
           },
           "configurations": {
+            "development": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -71,6 +79,9 @@
           "configurations": {
             "production": {
               "browserTarget": "invert-ui:build:production"
+            },
+            "development": {
+              "browserTarget": "invert-ui:build:development"
             }
           }
         },
@@ -121,6 +132,9 @@
           "configurations": {
             "production": {
               "devServerTarget": "invert-ui:serve:production"
+            },
+            "development": {
+              "devServerTarget": "invert-ui:serve"
             }
           }
         }

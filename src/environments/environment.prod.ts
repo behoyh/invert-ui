@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  server: 'https://invert-ui:5001'
+  server: 'https://{invert-api}:44336'
 };

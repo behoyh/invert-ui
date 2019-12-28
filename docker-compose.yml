@@ -1,0 +1,33 @@
+version: '3.5'
+
+services:
+  invert-ui:
+    image: behoyh/invert-ui
+    build:
+        context: .
+        dockerfile: ./Dockerfile
+    depends_on: 
+        - invert-api
+    ports:
+        - "8080:443"
+  invert-api:
+    image: behoyh/invert-api
+    depends_on:
+        - sql-server
+    environment:
+        - ASPNETCORE_ENVIRONMENT=Development
+        - ASPNETCORE_URLS=https://+:443;http://+:80
+        - ASPNETCORE_HTTPS_PORT=44336
+    ports:
+        - 28540:80
+        - 44336:443
+    volumes:
+        - ~/.aspnet/https:/root/.aspnet/https:ro
+        - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:2019-GA-ubuntu-16.04
+    environment:
+        - ACCEPT_EULA=Y
+        - SA_PASSWORD=yourStrong(!)Password
+    ports:
+        - 1433
