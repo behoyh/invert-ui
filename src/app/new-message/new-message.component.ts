@@ -5,7 +5,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { DatetimeConverter } from '../shared/helpers/datetime-converter';
 import * as moment from 'moment';
 
 @Component({
@@ -56,8 +55,8 @@ export class NewMessageComponent implements OnInit {
       body: [''],
       link: [''],
       image: [''],
-      startdate: [moment(), Validators.required],
-      enddate: [moment(), Validators.required],
+      startdate: [new Date(), Validators.required],
+      enddate: [new Date(), Validators.required],
       created: [moment(), Validators.required],
       modified: [moment(), Validators.required]
     });
@@ -76,13 +75,11 @@ export class NewMessageComponent implements OnInit {
 
     if (!firstRoute || firstRoute.url[0].path == "new") return;
 
-    var id = this.route.snapshot.firstChild.url[1];
-
-    if (id && id.path) {
-      this.service.GetMessage(id.path).subscribe(x => { this.form.setValue(x); });
+    if (firstRoute.url[1] && firstRoute.url[1].path) {
+      this.service.GetMessage(firstRoute.url[1].path).subscribe(x => { this.form.setValue(x); });
     }
 
-    this.service.Route(firstRoute.url[0].path, id ? id.path : "");
+    this.service.Route(firstRoute.url[0].path, firstRoute.url[1] ? firstRoute.url[1].path : "");
   }
 
   updateMessage() {

@@ -1,7 +1,22 @@
 <div class="row">
-    <label for="date-range">Sunrise / Sunset Date</label>
-    <br>
+    <div class="col-6 pl-0">
+        <ng-template contextDisposer="startdate" let-control="startdate">
+            <input type="text" placeholder="Sunrise Date" class="form-control" bsDatepicker
+                [bsConfig]="{ adaptivePosition: true }" *ngIf="control" [formControl]="control">
+        </ng-template>
+    </div>
+    <div class="col-6 pr-0">
+        <ng-template contextDisposer="enddate" let-control="enddate">
+            <input type="text" placeholder="Sunset Date" class="form-control" bsDatepicker
+                [bsConfig]="{ adaptivePosition: true }" *ngIf="control" [formControl]="control">
+        </ng-template>
+    </div>
 </div>
 <div class="row">
-    <bs-daterangepicker-inline></bs-daterangepicker-inline>
+    <div class="col-6 pl-0">
+        <timepicker [(ngModel)]="mytime" [showMeridian]="true"></timepicker>
+    </div>
+    <div class="col-6 pr-0">
+        <timepicker [(ngModel)]="mytime" [showMeridian]="true"></timepicker>
+    </div>
 </div>

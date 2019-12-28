@@ -10,6 +10,7 @@ export class DatetimeSelectorComponent {
   bsInlineValue = new Date();
   bsInlineRangeValue: Date[];
   maxDate = new Date();
+  mytime: Date = new Date();
  
   constructor() {
     this.maxDate.setDate(this.maxDate.getDate() + 7);

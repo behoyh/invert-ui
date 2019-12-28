@@ -1,6 +1,5 @@
 <div class="row">
-    <label for="link d-block">Link</label>
     <ng-template contextDisposer="link" let-control="link">
-        <input *ngIf="control" [formControl]="control" class="form-control" type="text" />
+        <input placeholder="Link" *ngIf="control" [formControl]="control" class="form-control" type="text" />
     </ng-template>
 </div>

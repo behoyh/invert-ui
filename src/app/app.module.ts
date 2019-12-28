@@ -6,8 +6,6 @@ import { ListComponent } from './list/list.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { HelpComponent } from './help/help.component';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { HttpClientModule } from '@angular/common/http';
 import { NewMessageModule } from './new-message/new-message.module';
 import { AppState } from './shared/app.state';
@@ -29,8 +27,6 @@ import { MomentModule } from 'ngx-moment';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BsDropdownModule.forRoot(),
-    BsDatepickerModule.forRoot(),
     HttpClientModule,
     NewMessageModule,
     NgxsModule.forRoot([
