@@ -9,12 +9,15 @@
         ID
     </div>
     <div class="col-sm-1">
+        Type
+    </div>
+    <div class="col-sm-2">
         Title
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         Sunrise
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         Sunset
     </div>
     <div class="col-sm-2"></div>
@@ -24,13 +27,16 @@
         {{item.id}}
     </div>
     <div class="col-sm-1">
+        {{item.type}}
+    </div>
+    <div class="col-sm-2">
         <p>{{item.title}}</p>
     </div>
-    <div class="col-sm-4">
-        {{item.startdate| amDateFormat:'MMMM Do YYYY, h:mm a'}}
+    <div class="col-sm-3">
+        {{item.startdate| amDateFormat:'MMM Do YYYY, h:mm a'}}
     </div>
-    <div class="col-sm-4">
-        {{item.enddate| amDateFormat:'MMMM Do YYYY, h:mm a'}}
+    <div class="col-sm-3">
+        {{item.enddate| amDateFormat:'MMM Do YYYY, h:mm a'}}
     </div>
     <div class="col-sm-2">
         <button class="btn btn-link" routerLink="/new/{{item.type}}/{{item.id}}">edit</button>
@@ -43,12 +49,15 @@
         ID
     </div>
     <div class="col-sm-1">
+        Type
+    </div>
+    <div class="col-sm-2">
         Title
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         Sunrise
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         Sunset
     </div>
     <div class="col-sm-2"></div>
@@ -58,13 +67,16 @@
         {{item.id}}
     </div>
     <div class="col-sm-1">
+        {{item.type}}
+    </div>
+    <div class="col-sm-2">
         <p>{{item.title}}</p>
     </div>
-    <div class="col-sm-4">
-        {{item.startdate | amDateFormat:'MMMM Do YYYY, h:mm a'}}
+    <div class="col-sm-3">
+        {{item.startdate| amDateFormat:'MMM Do YYYY, h:mm a'}}
     </div>
-    <div class="col-sm-4">
-        {{item.enddate | amDateFormat:'MMMM Do YYYY, h:mm a'}}
+    <div class="col-sm-3">
+        {{item.enddate| amDateFormat:'MMM Do YYYY, h:mm a'}}
     </div>
     <div class="col-sm-2">
         <button class="btn btn-link" routerLink="/new/{{item.type}}/{{item.id}}">edit</button>
@@ -77,12 +89,15 @@
         ID
     </div>
     <div class="col-sm-1">
+        Type
+    </div>
+    <div class="col-sm-2">
         Title
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         Sunrise
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
         Sunset
     </div>
     <div class="col-sm-2"></div>
@@ -92,13 +107,16 @@
         {{item.id}}
     </div>
     <div class="col-sm-1">
-        <p>{{item.title}}</p>
+        {{item.type}}
     </div>
-    <div class="col-sm-4">
-        {{item.startdate | amDateFormat:'MMMM Do YYYY, h:mm a'}}
+    <div class="col-sm-2">
+        {{item.title}}
     </div>
-    <div class="col-sm-4">
-        {{item.enddate | amDateFormat:'MMMM Do YYYY, h:mm a'}}
+    <div class="col-sm-3">
+        {{item.startdate | amDateFormat:'MMM Do YYYY, h:mm a'}}
+    </div>
+    <div class="col-sm-3">
+        {{item.enddate | amDateFormat:'MMM Do YYYY, h:mm a'}}
     </div>
     <div class="col-sm-2">
         <button class="btn btn-link" routerLink="/new/{{item.type}}/{{item.id}}">edit</button>
