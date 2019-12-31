@@ -15,6 +15,7 @@ export class MarketingMessage {
     body: string = "";
     link: string = null
     image: string = null;
+    imageurl:string = null;
     startdate: Date = new Date();
     enddate: Date = new Date();
     created: moment.Moment = moment();
