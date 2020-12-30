@@ -45,6 +45,20 @@ export class MessagesService {
       }));
   }
 
+  public UploadBlob(message: Blob, type:string): Observable<number> {
+
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/octet-stream'
+      })
+    };
+
+    return this.http.put<number>(environment.server + "/api/Blob?type=" + type, message, httpOptions)
+      .pipe(map(x => {
+        return x;
+      }));
+  }
+
   public Route(type:string, id:string){
     var app = this.store.snapshot().app;
 
