@@ -46,9 +46,15 @@ export class MessagesService {
   }
 
   public UploadBlob(message: Blob, type:string): Observable<number> {
-    return this.http.put<number>(environment.server + "/api/blob/" + type, message, this.httpOptions)
+
+    let httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/octet-stream'
+      })
+    };
+
+    return this.http.put<number>(environment.server + "/api/Blob?type=" + type, message, httpOptions)
       .pipe(map(x => {
-        debugger;
         return x;
       }));
   }

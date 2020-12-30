@@ -1,9 +1,11 @@
 <div class="row">
-    <form #imageForm=ngForm class="form-group input-group mb-3">
-        <div class="custom-file">
-            <input #Image (change)="ImageChanged($event.target.files)" type="file" class="custom-file-input" id="image-upload" aria-describedby="image-upload-label">
-            <label id="image-upload-label" class="custom-file-label" for="image-upload">Select Image</label>
-        </div>
-        <img *ngIf="blob_id" src="image?image:imageurl" />
-    </form>
+    <div class="input-group mb-3">
+        <ng-template contextDisposer="file" let-control="file">
+            <div class="control-fileupload">
+                <input #file (click)="file.value = null"(change)="imageChanged($event); filename = $event.target.files[0].name;" type="file" class="custom-file-input" id="image-upload" accept=".png, .jpg, .jpeg, .gif" aria-describedby="image-upload-label">
+                <label id="image-upload-label" class="custom-file-label" for="image-upload">{{filename?filename:"Select Image"}}</label>
+            </div>
+            <img *ngIf="bloB_ID" src="GetImageUrl(bloB_ID)" />
+        </ng-template>
+    </div>
 </div>
