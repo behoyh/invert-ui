@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { MessagesService } from 'src/app/messages.service';
 
 @Component({
   selector: 'app-image-uploader',
@@ -7,7 +8,17 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImageUploaderComponent {
-  image: string;
-  imageurl: string;
-  ImageChanged: (upload: any) => void;
+  bloB_ID:number;
+
+  public constructor(private service: MessagesService)
+  {
+    
+    
+  }
+
+  ImageChanged(upload: any)
+  {
+    debugger;
+    this.service.UploadBlob(upload, "png");
+  };
 }

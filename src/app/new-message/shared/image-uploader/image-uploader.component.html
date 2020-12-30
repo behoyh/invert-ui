@@ -1,9 +1,9 @@
 <div class="row">
-    <div class="input-group mb-3">
+    <form #imageForm=ngForm class="form-group input-group mb-3">
         <div class="custom-file">
-            <input [ngModel]="image?image:imageurl" (ngModelChange)="ImageChanged($event)" type="file" class="custom-file-input" id="image-upload" aria-describedby="image-upload-label">
+            <input #Image (change)="ImageChanged($event.target.files)" type="file" class="custom-file-input" id="image-upload" aria-describedby="image-upload-label">
             <label id="image-upload-label" class="custom-file-label" for="image-upload">Select Image</label>
         </div>
-        <img *ngIf="image || imageurl" src="image?image:imageurl" />
-    </div>
+        <img *ngIf="blob_id" src="image?image:imageurl" />
+    </form>
 </div>

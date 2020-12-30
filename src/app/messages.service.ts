@@ -45,6 +45,14 @@ export class MessagesService {
       }));
   }
 
+  public UploadBlob(message: Blob, type:string): Observable<number> {
+    return this.http.put<number>(environment.server + "/api/blob/" + type, message, this.httpOptions)
+      .pipe(map(x => {
+        debugger;
+        return x;
+      }));
+  }
+
   public Route(type:string, id:string){
     var app = this.store.snapshot().app;
 

@@ -13,9 +13,8 @@ export class MarketingMessage {
     istargeted: boolean = false;
     title: string = "";
     body: string = "";
-    link: string = null
-    image: string = null;
-    imageurl:string = null;
+    link: string = null;
+    bloB_ID: Number = 0;
     startdate: Date = new Date();
     enddate: Date = new Date();
     created: moment.Moment = moment();
