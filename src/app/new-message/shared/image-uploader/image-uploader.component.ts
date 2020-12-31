@@ -9,6 +9,7 @@ import { MessagesService } from 'src/app/messages.service';
 export class ImageUploaderComponent {
   bloB_ID:number;
   filename:string;
+  imageUrl:string;
   public constructor(private service: MessagesService)
   {
     
@@ -20,8 +21,15 @@ export class ImageUploaderComponent {
     var file = event.target.files[0];
 
     this.service.UploadBlob(file, "png").subscribe((x)=>{
-      // Display Preview File
-      console.log(x);
+
+      this.service.GetBlob(x).subscribe((x: Blob)=>{
+        let me = this;
+        var reader = new FileReader();
+        reader.onloadend = function() {
+          me.imageUrl = reader.result.toString();
+        };
+        reader.readAsDataURL(x); 
+      });
     });
 
     this.filename = file.name;

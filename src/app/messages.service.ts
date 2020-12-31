@@ -59,6 +59,22 @@ export class MessagesService {
       }));
   }
 
+  public GetBlob(blobId: number): Observable<any> {
+
+    let headers = new HttpHeaders()
+      .set('Content-Type', 'application/octet-stream');
+
+    let httpOptions:any = {
+      headers: headers,
+      responseType: 'blob' as 'blob'
+    };
+
+    return this.http.get(environment.server + "/api/Blob?BLOB_ID=" + blobId, httpOptions)
+      .pipe(map(x => {
+        return x;
+      }));
+  }
+
   public Route(type:string, id:string){
     var app = this.store.snapshot().app;
 

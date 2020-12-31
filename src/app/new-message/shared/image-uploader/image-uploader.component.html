@@ -5,7 +5,7 @@
                 <input #file (click)="file.value = null"(change)="imageChanged($event); filename = $event.target.files[0].name;" type="file" class="custom-file-input" id="image-upload" accept=".png, .jpg, .jpeg, .gif" aria-describedby="image-upload-label">
                 <label id="image-upload-label" class="custom-file-label" for="image-upload">{{filename?filename:"Select Image"}}</label>
             </div>
-            <img *ngIf="bloB_ID" src="GetImageUrl(bloB_ID)" />
+            <img *ngIf="imageUrl" [src]="imageUrl" />
         </ng-template>
     </div>
 </div>
