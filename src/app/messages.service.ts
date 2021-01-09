@@ -30,7 +30,7 @@ export class MessagesService {
   }
 
   public GetMessage(id: string): Observable<MarketingMessage> {
-    var request = new ApiRequest(id);
+    var request = new ApiRequest(parseInt(id));
     return this.http.post<MarketingMessage>(environment.server + "/api/messages/select", request, this.httpOptions)
       .pipe(map(x => {
         return x;
