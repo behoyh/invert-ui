@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DatetimeSelectorComponent } from '../src/app/new-message/shared/datetime-selector/datetime-selector.component';
 
@@ -6,7 +6,7 @@ describe('DatetimeSelectorComponent', () => {
   let component: DatetimeSelectorComponent;
   let fixture: ComponentFixture<DatetimeSelectorComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DatetimeSelectorComponent ]
     })

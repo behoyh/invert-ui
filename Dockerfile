@@ -1,4 +1,4 @@
-FROM node as node
+FROM node:16 as node
 # set working directory
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
