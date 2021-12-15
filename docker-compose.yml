@@ -10,6 +10,7 @@ services:
         - invert-api
     ports:
         - "8080:443"
+    restart: unless-stopped
   invert-api:
     image: behoyh/invert-api
     depends_on:
@@ -21,6 +22,7 @@ services:
     ports:
         - 28540:80
         - 44336:443
+    restart: unless-stopped
     volumes:
         - ~/.aspnet/https:/root/.aspnet/https:ro
         - ~/.microsoft/usersecrets:/root/.microsoft/usersecrets:ro
@@ -29,5 +31,6 @@ services:
     environment:
         - ACCEPT_EULA=Y
         - SA_PASSWORD=yourStrong(!)Password
+    restart: unless-stopped
     ports:
         - 1433

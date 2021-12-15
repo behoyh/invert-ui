@@ -10,13 +10,13 @@ export class MarketingMessage {
     type: string = "";
     active: boolean = false;
     urgent: boolean = false;
-    istargeted: boolean = false;
+    isTargeted: boolean = false;
     title: string = "";
     body: string = "";
     link: string = null;
-    bloB_ID: Number = 0;
-    startdate: Date = new Date();
-    enddate: Date = new Date();
+    blobId: Number = 0;
+    startDate: Date = new Date();
+    endDate: Date = new Date();
     created: moment.Moment = moment();
     modified: moment.Moment = moment();
 }
