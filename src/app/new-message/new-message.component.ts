@@ -23,7 +23,7 @@ export class NewMessageComponent implements OnInit {
   get urgent(): AbstractControl {
     return this.form.controls.urgent;
   }
-  get istargeted(): AbstractControl {
+  get isTargeted(): AbstractControl {
     return this.form.controls.istargeted;
   }
   get title(): AbstractControl {
@@ -35,20 +35,20 @@ export class NewMessageComponent implements OnInit {
   get link(): AbstractControl {
     return this.form.controls.link;
   }
-  get bloB_ID(): AbstractControl {
-    return this.form.controls.bloB_ID;
+  get blobId(): AbstractControl {
+    return this.form.controls.blobId;
   }
-  get startdate(): AbstractControl {
-    return this.form.controls.startdate;
+  get startDate(): AbstractControl {
+    return this.form.controls.startDate;
   }
-  get enddate(): AbstractControl {
-    return this.form.controls.enddate;
+  get endDate(): AbstractControl {
+    return this.form.controls.endDate;
   }
-  get starttime(): AbstractControl {
-    return this.form.controls.starttime;
+  get startTime(): AbstractControl {
+    return this.form.controls.startTime;
   }
-  get endtime(): AbstractControl {
-    return this.form.controls.endtime;
+  get endTime(): AbstractControl {
+    return this.form.controls.endTime;
   }
 
   constructor(private service: MessagesService, private route: ActivatedRoute, private fb: FormBuilder) {
@@ -57,15 +57,15 @@ export class NewMessageComponent implements OnInit {
       type: ['', Validators.required],
       active: [true, Validators.required],
       urgent: [false, Validators.required],
-      istargeted: [false, Validators.required],
+      isTargeted: [false, Validators.required],
       title: ['', Validators.required],
       body: [''],
       link: [''],
-      bloB_ID: [''],
-      startdate: [new Date(), Validators.required],
-      enddate: [new Date(), Validators.required],
-      starttime: [new Date()],
-      endtime: [new Date()],
+      blobId: 0,
+      startDate: [new Date(), Validators.required],
+      endDate: [new Date(), Validators.required],
+      startTime: [new Date()],
+      endTime: [new Date()],
       created: [moment(), Validators.required],
       modified: [moment(), Validators.required]
     });
@@ -89,13 +89,12 @@ export class NewMessageComponent implements OnInit {
     if (firstRoute.url[1] && firstRoute.url[1].path) {
       this.service.GetMessage(firstRoute.url[1].path).subscribe(x => {
         console.log(x);
-        x.startdate = new Date(x.startdate);
-        x.enddate = new Date(x.enddate);
-
+        x.startDate = new Date(x.startDate);
+        x.endDate = new Date(x.endDate);
         this.form.patchValue(
           {
-            "starttime": new Date(x.startdate),
-            "endtime": new Date(x.enddate)
+            "startTime": new Date(x.startDate),
+            "endTime": new Date(x.endDate)
           });
         this.form.patchValue(x);
       });

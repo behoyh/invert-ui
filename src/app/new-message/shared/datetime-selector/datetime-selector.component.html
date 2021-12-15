@@ -1,12 +1,12 @@
 <div class="row">
     <div class="col-6 pl-0">
-        <ng-template contextDisposer="startdate" let-control="startdate">
+        <ng-template contextDisposer="startDate" let-control="startDate">
             <input type="text" placeholder="Sunrise Date" class="form-control" bsDatepicker
                 [bsConfig]="{ adaptivePosition: true }" *ngIf="control" [formControl]="control">
         </ng-template>
     </div>
     <div class="col-6 pr-0">
-        <ng-template contextDisposer="enddate" let-control="enddate">
+        <ng-template contextDisposer="endDate" let-control="endDate">
             <input type="text" placeholder="Sunset Date" class="form-control" bsDatepicker
                 [bsConfig]="{ adaptivePosition: true }" *ngIf="control" [formControl]="control">
         </ng-template>
@@ -14,12 +14,12 @@
 </div>
 <div class="row">
     <div class="col-6 pl-0">
-        <ng-template contextDisposer="starttime" let-control="starttime">
+        <ng-template contextDisposer="startTime" let-control="startTime">
             <timepicker [showMeridian]="true" *ngIf="control" [formControl]="control"></timepicker>
         </ng-template>
     </div>
     <div class="col-6 pr-0">
-        <ng-template contextDisposer="endtime" let-control="endtime">
+        <ng-template contextDisposer="endTime" let-control="endTime">
             <timepicker [showMeridian]="true" *ngIf="control" [formControl]="control"></timepicker>
         </ng-template>
    </div>

@@ -1,6 +1,7 @@
 import { SetState } from './app.actions';
 import { AppStateModel } from './app.state.model';
 import { State, StateContext, Action } from '@ngxs/store';
+import { Injectable } from '@angular/core';
 
 @State<AppStateModel>({
     name: 'app',
@@ -14,6 +15,7 @@ import { State, StateContext, Action } from '@ngxs/store';
         imagePreviewUri: ''
     }
 })
+@Injectable()
 export class AppState {
     @Action(SetState)
     setUser({setState}:StateContext<AppStateModel>, {payload}: SetState) {

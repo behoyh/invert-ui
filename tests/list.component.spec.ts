@@ -22,4 +22,8 @@ describe('ListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  
+  it('should should load messages', () => {
+    expect(component.currentMessages.length).toBeGreaterThan(0);
+  });
 });

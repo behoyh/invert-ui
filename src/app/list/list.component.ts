@@ -18,9 +18,9 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.service.GetAllMessages().subscribe(x => { 
-      this.currentMessages = x.filter(y=>moment(y.startdate) <= moment() && moment(y.enddate) > moment());
-      this.upcomingMessages = x.filter(y=>moment(y.startdate) > moment()); 
-      this.pastMessages = x.filter(y=>moment(y.enddate) < moment()); 
+      this.currentMessages = x.filter(y=>moment(y.startDate) <= moment() && moment(y.endDate) > moment());
+      this.upcomingMessages = x.filter(y=>moment(y.startDate) > moment()); 
+      this.pastMessages = x.filter(y=>moment(y.endDate) < moment()); 
     });
   }
 

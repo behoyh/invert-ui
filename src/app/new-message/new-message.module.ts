@@ -15,7 +15,9 @@ import { ImageUploaderComponent } from './shared/image-uploader/image-uploader.c
 import { TypeSelectorComponent } from './shared/type-selector/type-selector.component';
 import { UrgentToogleComponent } from './shared/urgent-toogle/urgent-toogle.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TimepickerModule, BsDatepickerModule, BsDropdownModule }from 'ngx-bootstrap';
+import { TimepickerModule }from 'ngx-bootstrap/timepicker';
+import { BsDatepickerModule}from 'ngx-bootstrap/datepicker';
+import { BsDropdownModule }from 'ngx-bootstrap/dropdown';
 import { TargetUploaderComponent } from './shared/target-uploader/target-uploader.component';
 import { VersionSelectorComponent } from './shared/version-selector/version-selector.component';
 import { LinkComponent } from './shared/link/link.component';
